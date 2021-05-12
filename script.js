@@ -53,12 +53,5 @@ function newElement() {
       div.style.display = "none";
     }
   }
-  /*   const delBtn = document.querySelector('.delite__btn');
-    delBtn.addEventListener('click', function () {
-    console.log(123);
-  var delitt = document.querySelectorAll('.myUL');
-    console.log(myUL);
-    function myFunction() {
-      var x = document.getElementsByClassName("delite__btn").style.display = 'none';
-    } */
+ 
 }
