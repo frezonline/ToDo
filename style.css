@@ -8,91 +8,136 @@
 }
 
 .header { 
-  position: fixed;
-  top: 1px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  /* top: 1px;
   left: 25.5%;
   padding: 30px 40px;
   color: white;
-  text-align: center;
+  text-align: center; */
+}
+
+.title{
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  padding: 10px;
+  color: white;
 }
 
  body{
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: left;
-    height: 40vh;
-    color: black; 
-   
+    color: black;  */
+   /*  display: flex;
+    flex-direction: column; */
  }
+
+
+.container{
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.myInput{
+  display: flex;
+  justify-content: center;
+  max-height: 50px;
+  width: 500px;
+  padding: 9px;
+  font-size: 16px;
+  border: solid white 5px;
+  border-radius: 15px;
+  color: white;
+  outline:none;
+  
+  /* 
+    margin: 0;
+    
+    float: left;
+    
+    
+    
+    border-bottom-right-radius: 1px;
+    border-top-right-radius: 1px;
+    
+    margin-right: -12px;
+     */
+}
 
 input::-webkit-input-placeholder { 
     color: white;
     opacity: 0.7;  
 }
 
+.container{
+  display: flex;
+  justify-content: center;
   
-h1{
-    display: flex;
-    justify-content: center;
-
-    margin: 0px;
-    padding: 10px;
 }
 
-ul {
-    overflow:scroll auto;
-    overflow-x:hidden;
-    height: 80%;
-    position: fixed;
-    left: 26.5%;
-    top: 150px;
-    width: auto;
-    margin: auto;
-    padding: 0px;
-    height: 500px;
+.myUL {
+ display: inline;
+ 
+ /* justify-content: center; */
+  /* flex-direction: column; */
+  /* padding: 10px; */
+  margin: 5px;
+   /*  left: 26.5%; */ */
+    /* top: 150px; */
+    /* width: auto;
+    margin: auto; */
+    /* padding: 0px;
+    height: 500px; */
   }
+
 li{
-  
-    width: 622px;
+  padding: 5px;
+  margin: 5px; 
+  width: 600px;   
+  background-color: #d58e00;
+  padding-left: 9px;
+  font-size: 16px;
+  cursor: pointer;
+  border: solid 1px black;
+  padding: 12px 10px 12px 10px;
+  list-style-type: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  /* width: 622px;
     margin: 5px; 
-     padding-button: 10px; 
+     padding-button: 10px;  */
 }
 
-ul li {
-    margin-left: 30px;
-    cursor: pointer;
-    position: relative;
-    padding: 12px 0px 12px 40px;
-    background-color: #d58e00;
-    font-size: 14px;
-    list-style-type: none; 
-    border: solid 1px black;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    padding-left: 9px;
-  }
+/* ul li {
+     margin-left: 30px;
     
+    position: relative;
 
-
-  ul li:hover {
+  } */
+    
+   li:hover {
     background: #eabf69;
     
   }
   
  
-  ul li.checked {
+ li.checked {
     background: #8b5c00;
     color:white;
     text-decoration: line-through;
-    
   }
   
 
-  ul li.checked::before {
+ li.checked::before {
     content: '';
     position: absolute;
     border-color: white;
@@ -107,14 +152,14 @@ ul li {
   }
   
  
-  .close {
-    position: absolute;
-    right: 0;
-    top: 0px;
+  span.close {
+    /* position: absolute;
+    right: 450px;
+    top: 100px;  */
     background-color: transparent;
     padding: 14px 16px 14px 14px;
     color: white;
-    transition-duration: 1s;
+    transition-duration: 1s; 
   }
    
   .close:hover {
@@ -122,30 +167,13 @@ ul li {
     transform: scale(1.7);
     
   }
-
  
-
-
-  input {
-    
-    width: 500px;
-    margin: 0;
-    padding: 9px;
-    float: left;
-    font-size: 16px;
-    border: solid white 5px;
-    border-radius: 15px;
-    border-bottom-right-radius: 1px;
-    border-top-right-radius: 1px;
-    color: white;
-    margin-right: -12px;
-    outline:none;
-    
-  }
   
 
   .addBtn {
-    position: absolute;
+    position: relative;
+    top: -50px;
+    left: -5px;
     padding: 1px;
     width: 100px;
     font-weight: bold;
@@ -161,16 +189,6 @@ ul li {
   }
 
 
-.container{
-  display: flex;
-  justify-content: center;
-  
-}
-
-::-webkit-scrollbar{
-  position: fixed; 
-  left: 10px;
-}  
 
 button{
   position: fixed;
