@@ -21,27 +21,23 @@
   color: white;
 }
 
-.container{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  align-content: center;
-  align-items: center;
-}
+ 
 
 .input{
-  display: flex;
-  flex-direction: column;
+ /*  display: flex; */
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+  /* flex-direction: row;
   align-content: center;
-  align-items: center;
+  align-items: center; */
+  
 }
 
 .myInput{
   min-width: 400px;
   max-width: 600px;
-
-  width: 500px;
+  width: 100%;
   padding: 9px;
   font-size: 16px;
   border: solid white 5px;
@@ -49,7 +45,18 @@
   color: white;
   outline:none;
   
-
+  /* 
+    margin: 0;
+    
+    float: left;
+    
+    
+    
+    border-bottom-right-radius: 1px;
+    border-top-right-radius: 1px;
+    
+    margin-right: -12px;
+     */
 }
 
 input::-webkit-input-placeholder { 
@@ -66,6 +73,16 @@ input::-webkit-input-placeholder {
  align-items: center;
   
  
+ /* justify-content: center; */
+  /* flex-direction: column; */
+  /* padding: 10px; */
+  /* margin: 1px; */
+   /*  left: 26.5%; */ */
+    /* top: 150px; */
+    /* width: auto;
+    margin: auto; */
+    /* padding: 0px;
+    height: 500px; */
   }
 
 li{
@@ -84,10 +101,17 @@ li{
   -ms-user-select: none;
   user-select: none;
 
-
+  /* width: 622px;
+    margin: 5px; 
+     padding-button: 10px;  */
 }
 
+/* ul li {
+     margin-left: 30px;
+    
+    position: relative;
 
+  } */
     
    li:hover {
     background: #eabf69;
@@ -118,7 +142,9 @@ li{
   
  
   span.close {
- 
+    /* position: absolute;
+    right: 450px;
+    top: 100px;  */
     background-color: transparent;
     padding: 14px 16px 14px 14px;
     color: white;
@@ -135,9 +161,8 @@ li{
   
 
   .addBtn {
-    position: relative;
-    top: -50px;
-    left: 200px;
+    position:absolute;
+    right: 0px;
     padding: 1px;
     width: 100px;
     font-weight: bold;
@@ -162,3 +187,4 @@ button{
   top: 550px;
   background-color: red
 }
+
