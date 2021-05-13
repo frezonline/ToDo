@@ -25,3 +25,12 @@ checkedList.addEventListener('click', function(i) {
     i.target.classList.toggle('checked');
   }
 }, false);
+
+  function newElement() {
+    const inputValue = document.querySelector("input").value;
+    console.log(inputValue);
+    const myUL = document.querySelector('.myUL');
+    const htmlOfNote = (text) => 
+    `<li>${text}</li>`;
+    myUL.insertAdjacentHTML('beforeEnd', htmlOfNote(inputValue));
+  }
