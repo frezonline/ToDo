@@ -26,8 +26,8 @@
 .input{
  /*  display: flex; */
   position: relative;
-  width: fit-content;
   margin: 0 auto;
+  max-width: 600px;
   /* flex-direction: row;
   align-content: center;
   align-items: center; */
@@ -35,9 +35,7 @@
 }
 
 .myInput{
-  min-width: 400px;
-  max-width: 600px;
-  width: 100%;
+  width: calc(100% - 100px);
   padding: 9px;
   font-size: 16px;
   border: solid white 5px;
@@ -163,6 +161,7 @@ li{
   .addBtn {
     position:absolute;
     right: 0px;
+    top: 0px;
     padding: 1px;
     width: 100px;
     font-weight: bold;
