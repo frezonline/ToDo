@@ -11,11 +11,6 @@
   display: flex;
   justify-content: center;
   text-align: center;
-  /* top: 1px;
-  left: 25.5%;
-  padding: 30px 40px;
-  color: white;
-  text-align: center; */
 }
 
 .title{
@@ -26,28 +21,19 @@
   color: white;
 }
 
- body{
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: left;
-    color: black;  */
-   /*  display: flex;
-    flex-direction: column; */
- }
+ 
 
-
-.container{
-  max-width: 100%;
-  padding: 0;
-  margin: 0;
+.input{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
 }
 
 .myInput{
-  display: flex;
-  justify-content: center;
-  max-height: 50px;
+  min-width: 400px;
+  max-width: 600px;
+
   width: 500px;
   padding: 9px;
   font-size: 16px;
@@ -56,18 +42,7 @@
   color: white;
   outline:none;
   
-  /* 
-    margin: 0;
-    
-    float: left;
-    
-    
-    
-    border-bottom-right-radius: 1px;
-    border-top-right-radius: 1px;
-    
-    margin-right: -12px;
-     */
+
 }
 
 input::-webkit-input-placeholder { 
@@ -75,25 +50,15 @@ input::-webkit-input-placeholder {
     opacity: 0.7;  
 }
 
-.container{
-  display: flex;
-  justify-content: center;
-  
-}
 
 .myUL {
- display: inline;
+ display: flex;
+ justify-content: center;
+ flex-wrap: nowrap;
+ flex-direction: column;
+ align-items: center;
+  
  
- /* justify-content: center; */
-  /* flex-direction: column; */
-  /* padding: 10px; */
-  margin: 5px;
-   /*  left: 26.5%; */ */
-    /* top: 150px; */
-    /* width: auto;
-    margin: auto; */
-    /* padding: 0px;
-    height: 500px; */
   }
 
 li{
@@ -112,17 +77,10 @@ li{
   -ms-user-select: none;
   user-select: none;
 
-  /* width: 622px;
-    margin: 5px; 
-     padding-button: 10px;  */
+
 }
 
-/* ul li {
-     margin-left: 30px;
-    
-    position: relative;
 
-  } */
     
    li:hover {
     background: #eabf69;
@@ -153,9 +111,7 @@ li{
   
  
   span.close {
-    /* position: absolute;
-    right: 450px;
-    top: 100px;  */
+ 
     background-color: transparent;
     padding: 14px 16px 14px 14px;
     color: white;
@@ -168,12 +124,13 @@ li{
     
   }
  
+
   
 
   .addBtn {
     position: relative;
     top: -50px;
-    left: -5px;
+    left: 200px;
     padding: 1px;
     width: 100px;
     font-weight: bold;
