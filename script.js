@@ -1,36 +1,33 @@
-// Create a "close" button and append it to each list item
-const closeBtn = document.getElementsByTagName("LI");
-  for (i = 0; i < closeBtn.length; i++) {
-    let span = document.createElement("SPAN");
-    let txt = document.createTextNode("\u00D7");
-      span.className = "close";
-      span.appendChild(txt);
-      closeBtn[i].appendChild(span);
-}
+const clickAddBtn = document.querySelector('.addBtn');
+clickAddBtn.addEventListener('click', function addNewNode() {
+  const inputValue = document.querySelector("input").value;
+    if (inputValue === '') {
+      alert('Please, enter value!');
+      return;
+  }
+  const myUL = document.querySelector('.myUL');
+  const htmlOfNote = (text) => 
+    `<li>${text} <span class='close'>×</span> </li>`;
+  myUL.insertAdjacentHTML('beforeEnd', htmlOfNote(inputValue));
+  
+});
 
-// Click on a close button to hide the current list item
-const clickCloseBtn = document.getElementsByClassName("close");
-  for (i = 0; i < clickCloseBtn.length; i++) {
-    clickCloseBtn[i].onclick = function() {
-    let div = this.parentElement;
-    div.remove();
-  };
-} 
-
-
-// Add a "checked" symbol when clicking on a list item
-const checkedList = document.querySelector('Ul');
-checkedList.addEventListener('click', function(i) {
-  if (i.target.tagName === 'LI') {
-    i.target.classList.toggle('checked');
+const listChecked = document.querySelector('ul');
+listChecked.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
   }
 }, false);
 
-  function newElement() {
-    const inputValue = document.querySelector("input").value;
-    console.log(inputValue);
-    const myUL = document.querySelector('.myUL');
-    const htmlOfNote = (text) => 
-    `<li>${text}</li>`;
-    myUL.insertAdjacentHTML('beforeEnd', htmlOfNote(inputValue));
+
+const close = document.getElementsByClassName("close");
+let i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    const div = this.parentElement;
+    div.remove();
   }
+}
+
+
+
