@@ -17,7 +17,7 @@ listChecked.addEventListener('click', function(ev) {
   if (ev.target.tagName === 'LI') {
     ev.target.classList.toggle('checked');
   }
-  if (ev.target.closes('.close') { 
+  if (ev.target.closes('.close') 
       ev.target.closes('li').remove();  }
 }, false);
 
