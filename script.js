@@ -9,7 +9,7 @@ clickAddBtn.addEventListener('click', function addNewNode() {
   const htmlOfNote = (text) => 
     `<li>${text} <span class='close'>×</span> </li>`;
   myUL.insertAdjacentHTML('beforeEnd', htmlOfNote(inputValue));
-  
+  document.querySelector("input").value = '';
 });
 
 const listChecked = document.querySelector('ul');
@@ -22,14 +22,9 @@ listChecked.addEventListener('click', function(ev) {
 }, false);
 
 
-const close = document.getElementsByClassName("close");
-let i;
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function() {
-    const div = this.parentElement;
-    div.remove();
-  }
-}
-
-
-
+const deleteAllBtn = document.querySelector('.deleteBtn');
+const myUL = document.querySelector('.myUL');
+deleteAllBtn.addEventListener('click', function (i) {
+ (i.target.classList.contains('deliteBtn'));
+  myUL.innerHTML = '';
+});
