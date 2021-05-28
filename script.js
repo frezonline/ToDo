@@ -1,3 +1,9 @@
+const selectors = {
+  clickAddBtn: '.addBtn',
+  myUL: '.myUL',
+  deleteAllBtn: '.deleteBtn'
+};
+
 const clickAddBtn = document.querySelector('.addBtn');
 clickAddBtn.addEventListener('click', function addNewNode() {
   const inputValue = document.querySelector("input").value;
@@ -5,6 +11,8 @@ clickAddBtn.addEventListener('click', function addNewNode() {
       alert('Please, enter value!');
       return;
   }
+
+
   const myUL = document.querySelector('.myUL');
   const htmlOfNote = (text) => 
     `<li>${text} <span class='close'>×</span> </li>`;
