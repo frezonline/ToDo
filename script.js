@@ -13,7 +13,7 @@ clickAddBtn.addEventListener('click', function addNewNode() {
   }
 
 
-  const myUL = document.querySelector('.myUL');
+const myUL = document.querySelector('.myUL');
   const htmlOfNote = (text) => 
     `<li>${text} <span class='close'>×</span> </li>`;
   myUL.insertAdjacentHTML('beforeEnd', htmlOfNote(inputValue));
