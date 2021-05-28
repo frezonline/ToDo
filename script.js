@@ -11,8 +11,7 @@ clickAddBtn.addEventListener('click', function addNewNode() {
       alert('Please, enter value!');
       return;
   }
-
-
+  
 const myUL = document.querySelector('.myUL');
   const htmlOfNote = (text) => 
     `<li>${text} <span class='close'>×</span> </li>`;
