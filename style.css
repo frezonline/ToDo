@@ -4,7 +4,6 @@
   margin: 0;
   padding: 0;
   font-family: 'Architects Daughter', cursive;
-  
 }
 
 .header { 
@@ -24,14 +23,9 @@ color: white;
 
 
 .input{
-/*  display: flex; */
 position: relative;
 margin: 0 auto;
 max-width: 600px;
-/* flex-direction: row;
-align-content: center;
-align-items: center; */
-
 }
 
 .myInput{
@@ -43,18 +37,6 @@ border-radius: 15px;
 color: white;
 outline:none;
 
-/* 
-  margin: 0;
-  
-  float: left;
-  
-  
-  
-  border-bottom-right-radius: 1px;
-  border-top-right-radius: 1px;
-  
-  margin-right: -12px;
-   */
 }
 
 input::-webkit-input-placeholder { 
@@ -86,19 +68,8 @@ list-style-type: none;
 -moz-user-select: none;
 -ms-user-select: none;
 user-select: none;
-
-/* width: 622px;
-  margin: 5px; 
-   padding-button: 10px;  */
 }
-
-/* ul li {
-   margin-left: 30px;
-  
-  position: relative;
-
-} */
-  
+ 
  li:hover {
   background: #eabf69;
   
