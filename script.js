@@ -22,7 +22,8 @@ function saveToDoList(text) {
   localStorage.setItem("TODO storage", JSON.stringify(todoStorage));
 }
 
-const todoStorage = JSON.parse(localStorage.getItem("TODO storage")) || [];
+
+let todoStorage = JSON.parse(localStorage.getItem("TODO storage")) || [];
 todoStorage.forEach((item) => {
   myUL.insertAdjacentHTML("beforeEnd", htmlOfNote(item.task));
 });
@@ -31,10 +32,13 @@ clickAddBtn.addEventListener("click", function addNewNode() {
   const inputValue = document.querySelector("input").value;
   if (inputValue === "") {
     alert("Please, input your task!");
-    return;
+   
   }
 
+
   saveToDoList(inputValue);
+
+  
 
   myUL.insertAdjacentHTML("beforeEnd", htmlOfNote(inputValue));
   document.querySelector("input").value = "";
@@ -54,8 +58,9 @@ listChecked.addEventListener(
 deleteAllBtn.addEventListener("click", function (event) {
   event.target.classList.contains("deliteBtn");
   myUL.innerHTML = "";
-  localStorage.clear(todoStorage);
-  window.location.reload();
+  localStorage.clear();
+  todoStorage = [];
+  
 });
 
 enterInput.onkeypress = function (event) {
