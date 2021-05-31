@@ -3,7 +3,8 @@ const selectors = {
   myUL: ".myUL",
   deleteAllBtn: ".deleteBtn",
   listChecked: "ul",
-  enterInput: '.myInput',
+  enterInput: ".myInput",
+  inputValue: "input",
 };
 
 const clickAddBtn = document.querySelector(selectors.clickAddBtn);
@@ -11,6 +12,9 @@ const myUL = document.querySelector(selectors.myUL);
 const deleteAllBtn = document.querySelector(selectors.deleteAllBtn);
 const listChecked = document.querySelector(selectors.listChecked);
 const enterInput = document.querySelector(selectors.enterInput);
+const inputValue = document.querySelector(selectors.inputValue);
+
+const htmlOfNote = (text) => `<li>${text} <span class='close'>×</span> </li>`;
 
 clickAddBtn.addEventListener("click", function addNewNode() {
   const inputValue = document.querySelector("input").value;
@@ -22,7 +26,6 @@ clickAddBtn.addEventListener("click", function addNewNode() {
   const htmlOfNote = (text) => `<li>${text} <span class='close'>×</span> </li>`;
   myUL.insertAdjacentHTML("beforeEnd", htmlOfNote(inputValue));
   document.querySelector("input").value = "";
-
 });
 
 listChecked.addEventListener(
@@ -41,12 +44,10 @@ deleteAllBtn.addEventListener("click", function (event) {
   myUL.innerHTML = "";
 });
 
-
-enterInput.onkeypress = function(event) {
+enterInput.onkeypress = function (event) {
   if (event.keyCode == 13 || event.key == 13) {
-    total = +enterInput.value;
-    enterInput.value = total;
-    enterInput.value = "";
-    return;
+    const text = document.querySelector(selectors.inputValue).value;
+    myUL.insertAdjacentHTML("beforeEnd", htmlOfNote(text));
+    document.querySelector("input").value = "";
   }
 };
