@@ -30,7 +30,7 @@ todoStorage.forEach((item) => {
 clickAddBtn.addEventListener("click", function addNewNode() {
   const inputValue = document.querySelector("input").value;
   if (inputValue === "") {
-    alert("Please, input your task!");
+    alert("Please, input your task!").return;
   }
 
   saveToDoList(inputValue);
