@@ -55,6 +55,7 @@ deleteAllBtn.addEventListener("click", function (event) {
   event.target.classList.contains("deliteBtn");
   myUL.innerHTML = "";
   localStorage.clear(todoStorage);
+  window.location.reload();
 });
 
 enterInput.onkeypress = function (event) {
