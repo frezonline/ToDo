@@ -1,102 +1,92 @@
-*{
+* {
   background-color: rgb(0, 80, 80);
-  box-sizing:content-box;
+ 
   margin: 0;
   padding: 0;
-  font-family: 'Architects Daughter', cursive;
+  font-family: "Architects Daughter", cursive;
 }
 
-.header { 
-display: flex;
-justify-content: center;
-text-align: center;
+.header {
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
-.title{
-display: flex;
-justify-content: center;
-margin: 10px;
-padding: 10px;
-color: white;
-}
-
-
-
-.input{
-position: relative;
-margin: 0 auto;
-max-width: 600px;
-}
-
-.myInput{
-width: calc(100% - 100px);
-padding: 9px;
-font-size: 16px;
-border: solid white 5px;
-border-radius: 15px;
-color: white;
-outline:none;
-
-}
-
-input::-webkit-input-placeholder { 
+.title {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  padding: 10px;
   color: white;
-  opacity: 0.7;  
 }
 
+.input {
+  position: relative;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.myInput {
+  width: calc(100% - 100px);
+  padding: 9px;
+  font-size: 16px;
+  border: solid white 5px;
+  border-radius: 15px;
+  color: white;
+  outline: none;
+}
+
+input::-webkit-input-placeholder {
+  color: white;
+  opacity: 0.7;
+}
 
 .myUL {
-display: flex;
-justify-content: center;
-flex-wrap: nowrap;
-flex-direction: column;
-align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;
 }
 
-li{
-padding: 5px;
-margin: 5px; 
-width: 600px;   
-background-color: #d58e00;
-padding-left: 9px;
-font-size: 16px;
-cursor: pointer;
-border: solid 1px black;
-padding: 12px 10px 12px 10px;
-list-style-type: none;
--webkit-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
-user-select: none;
+li {
+  margin: 5px;
+  width: 600px;
+  background-color: #d58e00;
+  padding-left: 9px;
+  font-size: 16px;
+  cursor: pointer;
+  border: solid 1px black;
+  padding: 12px 10px 12px 10px;
+  list-style-type: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
- 
- li:hover {
+
+li:hover {
   background: #eabf69;
-  
 }
-
 
 li.checked {
   background: #8b5c00;
-  color:white;
+  color: white;
   text-decoration: line-through;
 }
 
-
 li.checked::before {
-  content: '';
+  content: "";
   position: absolute;
   border-color: white;
   border-style: solid;
   border-width: 0 2px 2px 0;
-   top: 10px; 
-  left: -24px; 
+  top: 10px;
+  left: -24px;
   transform: rotate(45deg);
   height: 15px;
   width: 7px;
-  
 }
-
 
 span.close {
   position: relative;
@@ -108,26 +98,25 @@ span.close {
   background-color: transparent;
   padding: 1px;
   color: white;
-  transition-duration: 1s; 
+  transition-duration: 1s;
 }
- 
+
 .close:hover {
   transition: 1s;
   transform: scale(1);
-  
 }
 
 .addBtn {
-  position:absolute;
-  right: 0px;
-  top: 0px;
+  position: absolute;
+  right: 0;
+  top: 0;
   padding: 1px;
   width: 100px;
   height: 30.4px;
   font-weight: bold;
   padding: 10px;
   background-color: white;
-  color:rgb(0, 80, 80);
+  color: rgb(0, 80, 80);
   float: right;
   text-align: center;
   font-size: 21.6px;
@@ -136,14 +125,11 @@ span.close {
   border-radius: 12px;
 }
 
-
-
-button{
-position: fixed;
-font-size: 16px;
-left: 100px;
-padding: 10px;
-top: 550px;
-background-color: red
+button {
+  position: fixed;
+  font-size: 16px;
+  left: 100px;
+  padding: 10px;
+  top: 550px;
+  background-color: red;
 }
-
