@@ -14,54 +14,79 @@ const listChecked = document.querySelector(selectors.listChecked);
 const enterInput = document.querySelector(selectors.enterInput);
 const inputValue = document.querySelector(selectors.inputValue);
 
-const htmlOfNote = (text) => `<li>${text} <span class='close'>×</span> </li>`;
-
-function saveToDoList(text) {
-  const todo = { task: text };
-  todoStorage.push(todo);
-  localStorage.setItem("TODO storage", JSON.stringify(todoStorage));
-}
+const htmlOfNote = (todoItem) =>
+  `<li id=${todoItem.id} class='${todoItem.checked ? "checked" : ""}'>${
+    todoItem.text
+  } <span class='close'>×</span> </li>`;
 
 let todoStorage = JSON.parse(localStorage.getItem("TODO storage")) || [];
-todoStorage.forEach((item) => {
-  myUL.insertAdjacentHTML("beforeEnd", htmlOfNote(item.task));
-});
+if (todoStorage.length > 0) {
+  todoStorage.forEach((item) => {
+    myUL.insertAdjacentHTML("beforeEnd", htmlOfNote(item));
+  });
+}
 
+function setNewTodo(text) {
+  const storage = JSON.parse(localStorage.getItem("TODO storage")) || [];
+  const newTodo = {
+    text: text,
+    checked: false,
+    id: Math.floor(Math.random() * 1000),
+  };
+  storage.push(newTodo);
+  localStorage.setItem("TODO storage", JSON.stringify(storage));
+  myUL.insertAdjacentHTML("beforeEnd", htmlOfNote(newTodo));
+}
+
+// add new note -----
 clickAddBtn.addEventListener("click", function addNewNode() {
-  const inputValue = document.querySelector("input").value;
-  if (inputValue === "") {
+  const textOfNewToDo = document.querySelector("input").value;
+  if (textOfNewToDo === "") {
     alert("Please, input your task!").return;
   }
-
-  saveToDoList(inputValue);
-
-  myUL.insertAdjacentHTML("beforeEnd", htmlOfNote(inputValue));
+  setNewTodo(textOfNewToDo);
   document.querySelector("input").value = "";
-});
-
-listChecked.addEventListener(
-  "click",
-  function (event) {
-    if (event.target.tagName === "LI") {
-      event.target.classList.toggle("checked");
-    }
-    if (event.target.closest(".close")) event.target.closest("li").remove();
-  },
-  false
-);
-
-deleteAllBtn.addEventListener("click", function (event) {
-  event.target.classList.contains("deliteBtn");
-  myUL.innerHTML = "";
-  localStorage.clear();
-  todoStorage = [];
 });
 
 enterInput.onkeypress = function (event) {
   if (event.keyCode == 13 || event.key == 13) {
-    const text = document.querySelector(selectors.inputValue).value;
-    myUL.insertAdjacentHTML("beforeEnd", htmlOfNote(text));
-    saveToDoList(text);
+    const textOfNewToDo = document.querySelector(selectors.inputValue).value;
+    setNewTodo(textOfNewToDo);
     document.querySelector("input").value = "";
   }
 };
+// add new note -----
+
+// check and delete note -----
+listChecked.addEventListener("click", ({ target }) => {
+  const todoStorage = JSON.parse(localStorage.getItem("TODO storage"));
+
+  if (target.tagName === "LI") {
+    const idOfNote = +target.getAttribute("id");
+    const updatedStorage = todoStorage.map((item) => {
+      if (item.id === idOfNote) {
+        item.checked = !item.checked;
+      }
+      return item;
+    });
+    localStorage.setItem("TODO storage", JSON.stringify(updatedStorage));
+    event.target.classList.toggle("checked");
+  }
+
+  if (target.closest(".close")) {
+    const idOfNote = +target.closest("li").getAttribute("id");
+    const updatedStorage = todoStorage.filter((item) => item.id !== idOfNote);
+    localStorage.setItem("TODO storage", JSON.stringify(updatedStorage));
+    target.closest("li").remove();
+  }
+});
+// check and delete note -----
+
+// delete all click -----
+deleteAllBtn.addEventListener("click", function (event) {
+  if (event.target.classList.contains("deleteBtn")) {
+    myUL.innerHTML = "";
+    localStorage.clear();
+  }
+});
+// delete all click -----
