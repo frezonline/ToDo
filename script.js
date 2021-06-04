@@ -38,7 +38,6 @@ function setNewTodo(text) {
   myUL.insertAdjacentHTML("beforeEnd", htmlOfNote(newTodo));
 }
 
-// add new note -----
 clickAddBtn.addEventListener("click", function addNewNode() {
   const textOfNewToDo = document.querySelector("input").value;
   if (textOfNewToDo === "") {
@@ -55,9 +54,7 @@ enterInput.onkeypress = function (event) {
     document.querySelector("input").value = "";
   }
 };
-// add new note -----
 
-// check and delete note -----
 listChecked.addEventListener("click", ({ target }) => {
   const todoStorage = JSON.parse(localStorage.getItem("TODO storage"));
 
@@ -80,13 +77,10 @@ listChecked.addEventListener("click", ({ target }) => {
     target.closest("li").remove();
   }
 });
-// check and delete note -----
 
-// delete all click -----
 deleteAllBtn.addEventListener("click", function (event) {
   if (event.target.classList.contains("deleteBtn")) {
     myUL.innerHTML = "";
     localStorage.clear();
   }
 });
-// delete all click -----
