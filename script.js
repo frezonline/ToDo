@@ -12,43 +12,51 @@ const myUL = document.querySelector(selectors.myUL);
 const deleteAllBtn = document.querySelector(selectors.deleteAllBtn);
 const listChecked = document.querySelector(selectors.listChecked);
 const enterInput = document.querySelector(selectors.enterInput);
-const inputValue = document.querySelector(selectors.inputValue);
 
-const htmlOfNote = (todoItem) =>
-  `<li id=${todoItem.id} class='${todoItem.checked ? "checked" : ""}'>${
-    todoItem.text
-  } <span class='close'>×</span> </li>`;
+const htmlOfNote = (todoItem) => `
+  <li 
+      id=${todoItem.id} 
+      class='${todoItem.checked ? "checked" : ""}'
+      >
+      ${todoItem.text} 
+      <span class='close'>×</span> 
+  </li>`;
 
-let todoStorage = JSON.parse(localStorage.getItem("TODO storage")) || [];
-if (todoStorage.length > 0) {
-  todoStorage.forEach((item) => {
-    myUL.insertAdjacentHTML("beforeEnd", htmlOfNote(item));
-  });
-}
+const renderAfterReload = () => {
+  const todoStorage = JSON.parse(localStorage.getItem("TODO storage")) || [];
+  if (todoStorage.length > 0) {
+    todoStorage.forEach((item) => {
+      myUL.insertAdjacentHTML("beforeEnd", htmlOfNote(item));
+    });
+  }
+};
 
-function setNewTodo(text) {
+const setNewTodo = (text) => {
   const storage = JSON.parse(localStorage.getItem("TODO storage")) || [];
   const newTodo = {
-    text: text,
+    text,
     checked: false,
     id: Math.floor(Math.random() * 1000),
   };
   storage.push(newTodo);
   localStorage.setItem("TODO storage", JSON.stringify(storage));
   myUL.insertAdjacentHTML("beforeEnd", htmlOfNote(newTodo));
-}
+};
 
-clickAddBtn.addEventListener("click", function addNewNode() {
+renderAfterReload();
+
+clickAddBtn.addEventListener("click", () => {
   const textOfNewToDo = document.querySelector("input").value;
   if (textOfNewToDo === "") {
-    alert("Please, input your task!").return;
+    alert("Please, input your task!");
+    return;
   }
   setNewTodo(textOfNewToDo);
   document.querySelector("input").value = "";
 });
 
-enterInput.onkeypress = function (event) {
-  if (event.keyCode == 13 || event.key == 13) {
+enterInput.onkeypress = function click(event) {
+  if (event.keyCode === 13 || event.key === 13) {
     const textOfNewToDo = document.querySelector(selectors.inputValue).value;
     setNewTodo(textOfNewToDo);
     document.querySelector("input").value = "";
@@ -78,7 +86,7 @@ listChecked.addEventListener("click", ({ target }) => {
   }
 });
 
-deleteAllBtn.addEventListener("click", function (event) {
+deleteAllBtn.addEventListener("click", (event) => {
   if (event.target.classList.contains("deleteBtn")) {
     myUL.innerHTML = "";
     localStorage.clear();
