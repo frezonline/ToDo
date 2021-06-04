@@ -130,3 +130,10 @@ button {
   top: 550px;
   background-color: red;
 }
+
+@media only screen and (max-device-width: 748px) {
+  li{
+    width: auto;
+    min-width: 300px;
+  }
+}
